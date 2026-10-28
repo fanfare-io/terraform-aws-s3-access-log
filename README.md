@@ -4,7 +4,7 @@
 [![Markdown Actions Status](https://github.com/tmknom/terraform-aws-s3-access-log/workflows/Markdown/badge.svg)](https://github.com/tmknom/terraform-aws-s3-access-log/actions?query=workflow%3AMarkdown)
 [![YAML Actions Status](https://github.com/tmknom/terraform-aws-s3-access-log/workflows/YAML/badge.svg)](https://github.com/tmknom/terraform-aws-s3-access-log/actions?query=workflow%3AYAML)
 [![JSON Actions Status](https://github.com/tmknom/terraform-aws-s3-access-log/workflows/JSON/badge.svg)](https://github.com/tmknom/terraform-aws-s3-access-log/actions?query=workflow%3AJSON)
-[![GitHub tag](https://img.shields.io/github/tag/tmknom/terraform-aws-s3-access-log.svg)](https://registry.terraform.io/modules/tmknom/s3-access-log/aws)
+[![GitHub tag](https://img.shields.io/github/tag/fanfare-io/terraform-aws-s3-access-log.svg)](https://github.com/fanfare-io/terraform-aws-s3-access-log/tags)
 [![License](https://img.shields.io/github/license/tmknom/terraform-aws-s3-access-log.svg)](https://opensource.org/licenses/Apache-2.0)
 
 Terraform module which creates S3 Bucket resources for Access Log on AWS.
@@ -26,7 +26,7 @@ This module provides recommended settings.
 
 ```hcl
 module "s3_access_log" {
-  source = "git::https://github.com/tmknom/terraform-aws-s3-access-log.git?ref=tags/2.0.0"
+  source = "git::https://github.com/fanfare-io/terraform-aws-s3-access-log.git?ref=v2.1.0"
   name   = "s3-access-log"
 }
 ```
@@ -35,7 +35,7 @@ module "s3_access_log" {
 
 ```hcl
 module "s3_access_log" {
-  source = "git::https://github.com/tmknom/terraform-aws-s3-access-log.git?ref=tags/2.0.0"
+  source = "git::https://github.com/fanfare-io/terraform-aws-s3-access-log.git?ref=v2.1.0"
   name   = "s3-access-log"
 
   versioning_enabled = false
@@ -142,17 +142,13 @@ install                        Install requirements
 lint                           Lint code
 plan-complete                  Run terraform plan examples/complete
 plan-minimal                   Run terraform plan examples/minimal
-release                        Release GitHub and Terraform Module Registry
+release                        Release GitHub
 upgrade                        Upgrade makefile
 ```
 
 ### Releasing new versions
 
-Bump VERSION file, and run `make release`.
-
-### Terraform Module Registry
-
-- <https://registry.terraform.io/modules/tmknom/s3-access-log/aws>
+Merging to master tags a release from the PR title: `#major` or `#minor` selects the bump, patch is the default, and `#none` skips tagging.
 
 ## License
 
